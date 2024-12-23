@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./menu.module.css";
-import Link from "next/link";
-import Image from "next/image";
-import MenuCategories from "../menuCategores/menuCategories";
+import MenuCategories from "../menuCategores/MenuCategories";
 import MenuPost from "../menuPosts/MenuPosts";
 
 const Menu = () => {
