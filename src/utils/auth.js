@@ -16,6 +16,20 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET,
     }),
   ],
+  callbacks: {
+    async session({ session, user }) {
+      // Optionally add custom data to the session
+      session.user.id = user.id;
+      return session;
+    },
+    async jwt({ token, user }) {
+      // You can also customize the JWT here
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+  },
 };
 
 export const getAuthSession = () => getServerSession(authOptions);
